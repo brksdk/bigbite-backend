@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get("/first",[Site::class,"first"]);
+//Route::get("/register",[Site::class,"register"]);
