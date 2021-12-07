@@ -18,7 +18,7 @@ class Site extends Controller
         $user = new User();
         $user->name=$request->post('name');
         $user->email=$request->post('email');
-        $user->password=$request->post('password');
+        $user->password=bcrypt($request->post('password'));
         if($user->save())
         {
             return response()->json(['succes'=>true
