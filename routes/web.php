@@ -17,5 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/first",[Site::class,"first"]);
+Route::get("/xx-admin",[\App\Http\Controllers\Admin\MainController::class,"index"]);
+Route::post("/admin/login",[\App\Http\Controllers\Admin\MainController::class,"login"])->name('admin.login');
+Route::get("/admin/orders",[\App\Http\Controllers\Admin\MainController::class,"orders"]);
 //Route::get("/register",[Site::class,"register"]);
