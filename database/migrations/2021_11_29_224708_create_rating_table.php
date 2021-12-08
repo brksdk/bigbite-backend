@@ -19,7 +19,7 @@ class CreateRatingTable extends Migration
             $table->unsignedBigInteger('menu_id');
             $table->foreign('menu_id')->references('id')->on('bigbitemenu');
             $table->integer('score');
-            $table->foreign('customer_id')->references('id')->on('customer');
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->string('dateRecorded');
             $table->string('remarks');
             $table->rememberToken();

@@ -21,7 +21,7 @@ class CreatePaymentTable extends Migration
             //$table->foreign('amount')->references('totalAmount')->on('order_details');
             $table->foreign('order_id')->references('id')->on('order');
             $table->string('date');
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('PaidBy');
             $table->rememberToken();
             $table->timestamps();

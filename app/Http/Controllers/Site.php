@@ -13,12 +13,12 @@ class Site extends Controller
         return view("first");
     }
 
-    public function register(Request $request)
+    /*public function register(Request $request)
     {   dd($request->all());
         $user = new User();
         $user->name=$request->post('name');
         $user->email=$request->post('email');
-        $user->password=$request->post('password');
+        $user->password=bcrypt($request->post('password'));
         if($user->save())
         {
             return response()->json(['succes'=>true
@@ -29,5 +29,5 @@ class Site extends Controller
                 'succes'=>false
             ]);
         }
-    }
+    }*/
 }

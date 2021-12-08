@@ -19,7 +19,7 @@ class CreateOrderTable extends Migration
             $table->string('orderDate');
             $table->boolean('orderStatus');
             $table->integer('totalAmount');
-            $table->foreign('customer_id')->references('id')->on('customer');
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->rememberToken();
             $table->timestamps();
         });
