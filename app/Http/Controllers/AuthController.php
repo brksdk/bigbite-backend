@@ -61,6 +61,18 @@ class AuthController extends Controller
         }else{
             return response()->json(['status'=>false ]);
         }
+        public function login(Request $request)
+    {
+
+        $user = Customer::where('email',$request->email)->where('password',$request->password)->get();
+
+        if(count($user))
+        {
+            return response()->json(['status'=>true,'user' => $user]);
+
+        }else{
+            return response()->json(['status'=>false ]);
+        }
 
     }
 
