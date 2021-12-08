@@ -13,7 +13,7 @@ class Site extends Controller
         return view("first");
     }
 
-    public function register(Request $request)
+    /*public function register(Request $request)
     {   dd($request->all());
         $user = new User();
         $user->name=$request->post('name');
@@ -29,5 +29,5 @@ class Site extends Controller
                 'succes'=>false
             ]);
         }
-    }
+    }*/
 }
