@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +18,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/admin', [\App\Http\Controllers\ApiController::class, 'admin']);
+Route::post('/register', [\App\Http\Controllers\ApiController::class, 'register']);
+Route::post('/login', [\App\Http\Controllers\ApiController::class, 'login']);
+Route::get('/categories', [\App\Http\Controllers\ApiController::class, 'categories']);
+Route::get('/getregister', [\App\Http\Controllers\ApiController::class, 'getregister']);
+Route::get('/getfood', [\App\Http\Controllers\ApiController::class, 'getfood']);
 
-Route::post('/admin', [AuthController::class, 'admin']);
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
 
 

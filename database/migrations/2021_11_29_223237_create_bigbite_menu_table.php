@@ -13,14 +13,11 @@ class CreateBigbiteMenuTable extends Migration
      */
     public function up()
     {
-        Schema::create('bigbitemenu', function (Blueprint $table) {
+        Schema::create('bigbitemenus', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('type_id');
             $table->string('name');
             $table->integer('price');
-            $table->foreign('type_id')->references('id')->on('menu_type');
             $table->string('image');
-            $table->boolean('status');
             $table->string('ingredients');
             $table->rememberToken();
             $table->timestamps();
