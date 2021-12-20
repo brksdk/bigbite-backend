@@ -19,8 +19,8 @@ class CreateOrderDetailsTable extends Migration
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('menu_id');
             $table->string('no_of_serving');
-            $table->foreign('order_id')->references('id')->on('order');
-            $table->foreign('menu_id')->references('id')->on('bigbitemenu');
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('menu_id')->references('id')->on('bigbitemenus');
             $table->rememberToken();
             $table->timestamps();
         });

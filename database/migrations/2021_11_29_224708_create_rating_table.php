@@ -13,11 +13,11 @@ class CreateRatingTable extends Migration
      */
     public function up()
     {
-        Schema::create('rating', function (Blueprint $table) {
+        Schema::create('ratings', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('customer_id');
             $table->unsignedBigInteger('menu_id');
-            $table->foreign('menu_id')->references('id')->on('bigbitemenu');
+            $table->foreign('menu_id')->references('id')->on('bigbitemenus');
             $table->integer('score');
             $table->foreign('customer_id')->references('id')->on('customers');
             $table->string('dateRecorded');
